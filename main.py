@@ -24,6 +24,14 @@ search_results = WebDriverWait(browser, 10).until(
     EC.presence_of_all_elements_located((By.CLASS_NAME, "MjjYud"))
 )
 
+# browser.execute_script(
+#     """
+#     const shitty = arguments[0];
+#     shitty.parentElement.removeChild(shitty)
+#     """,
+#     shitty_element,
+# )
+
 for index, search_result in enumerate(search_results):
     if search_result.is_displayed() and search_result.size["height"] > 0:
         search_result.screenshot(f"screenshots/{KEYWORD}x{index}.png")
