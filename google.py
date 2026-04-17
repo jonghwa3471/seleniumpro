@@ -11,6 +11,7 @@ class GoogleKeywordScreenshooter:
     def __init__(self, keyword, screenshots_dir):
         self.options = Options()
         self.options.add_argument("--disable-blink-features=AutomationControlled")
+        self.options.add_argument("--headless")
         self.browser: WebDriver = webdriver.Chrome(options=self.options)
         self.keyword = keyword
         self.screenshots_dir = screenshots_dir
